@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shravan Kumar Koppolu - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #0A2647;
+      background-color: #FFFFFF;
+      scroll-behavior: smooth;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    a {
+      text-decoration: none;
+      color: #0A2647;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #FFD700;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #0A2647, #1C3F6E);
+      color: #FFFFFF;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    header p {
+      margin: 10px 0;
+      font-size: 1.2rem;
+    }
+
+    header a {
+      color: #FFD700;
+    }
+
+    /* Profile Image */
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin: 20px auto;
+      display: block;
+      border: 4px solid #FFD700;
+      animation: zoomIn 1.5s ease-in-out;
+    }
+
+    /* Navigation */
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #FFD700;
+      padding: 10px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      margin: 0 15px;
+      font-weight: bold;
+      color: #0A2647;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #FFFFFF;
+    }
+
+    /* Sections */
+    section {
+      padding: 60px 20px;
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: #0A2647;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    /* About Me Section */
+    #about {
+      background: linear-gradient(135deg, #F5F5F5, #E0E0E0);
+    }
+
+    .about-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: left;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    .about-content p {
+      margin-bottom: 20px;
+    }
+
+    .about-content strong {
+      color: #0A2647;
+      font-weight: 600;
+    }
+
+    /* Skills Section */
+    #skills {
+      background: linear-gradient(135deg, #FFFFFF, #F5F5F5);
+    }
+
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .skill-category {
+      background-color: #FFFFFF;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .skill-category:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .skill-category h3 {
+      margin-top: 0;
+      font-size: 1.5rem;
+      color: #0A2647;
+      border-bottom: 2px solid #FFD700;
+      padding-bottom: 10px;
+    }
+
+    .skill-card {
+      background-color: #0A2647;
+      color: #FFFFFF;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      text-align: center;
+      font-size: 0.9rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .skill-card:hover {
+      background-color: #FFD700;
+      color: #0A2647;
+    }
+
+    /* Work Experience */
+    .experience-card {
+      background-color: #FFFFFF;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 800px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .experience-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .experience-card h3 {
+      margin: 0;
+    }
+
+    .experience-card p {
+      margin: 10px 0;
+    }
+
+    /* Projects */
+    #projects {
+      background: linear-gradient(135deg, #F5F5F5, #E0E0E0);
+    }
+
+    .project-card {
+      background-color: #FFFFFF;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 800px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .project-card h3 {
+      margin: 0;
+    }
+
+    .project-card p {
+      margin: 10px 0;
+    }
+
+    .project-card a {
+      color: #0A2647;
+      font-weight: bold;
+    }
+
+    .project-card a:hover {
+      color: #FFD700;
+    }
+
+    /* Awards and Certificates */
+    #awards {
+      background: linear-gradient(135deg, #FFFFFF, #F5F5F5);
+    }
+
+    .awards-list {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .awards-list li {
+      margin: 10px 0;
+    }
+
+    /* Contact */
+    #contact {
+      background: linear-gradient(135deg, #0A2647, #1C3F6E);
+      color: #FFFFFF;
+      text-align: center;
+    }
+
+    #contact h2 {
+      color: #FFFFFF;
+    }
+
+    #contact form {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    #contact input, #contact textarea {
+      padding: 10px;
+      border: 1px solid #FFD700;
+      border-radius: 5px;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #FFFFFF;
+    }
+
+    #contact input::placeholder, #contact textarea::placeholder {
+      color: #CCCCCC;
+    }
+
+    #contact button {
+      background-color: #FFD700;
+      color: #0A2647;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    #contact button:hover {
+      background-color: #FFFFFF;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #0A2647;
+      color: #FFFFFF;
+      text-align: center;
+      padding: 20px;
+    }
+
+    footer a {
+      color: #FFD700;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes zoomIn {
+      from {
+        transform: scale(0.9);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  
+	<header>
+	  <img src="https://avatars.githubusercontent.com/u/12954210?v=4" alt="Shravan Kumar Koppolu" class="profile-img">
+	  <h1>Shravan Kumar Koppolu</h1>
+	  <p>Experienced Java Developer | Building Scalable, High-Performance Applications</p>
+	  <p><a href="mailto:shravan@careerwebmail.com">shravan@careerwebmail.com</a> | (469) 279-9164</p>
+	  <p>
+		<a href="https://www.linkedin.com/in/shravankoppolu/" target="_blank">LinkedIn</a> | 
+		<a href="https://github.com/shravankumarkoppolu" target="_blank">GitHub</a> |
+		<a href="file:///Users/shravankumar/Downloads/Shravan_Koppolu_Java_Developer_Resume.pdf" download="Shravan_Koppolu_Java_Developer_Resume.pdf">Download Resume</a>
+	  </p>
+	</header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#about">About Me</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#awards">Awards</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- About Me -->
+	<section id="about">
+		<h2>About Me</h2>
+		<div class="about-content">
+		  <p>
+			I am a passionate and results-driven <strong>Java Developer</strong> with <strong>4+ years of experience</strong> in designing, developing, and deploying scalable, high-performance applications across diverse domains such as <strong>banking</strong> and <strong>healthcare</strong>. My expertise lies in building robust systems using <strong>microservices architecture</strong>, <strong>RESTful APIs</strong>, and <strong>cloud-based solutions</strong>.
+		  </p>
+		  <p>
+			Over the years, I have successfully engineered solutions that improved system performance by up to <strong>40%</strong>, reduced deployment times by <strong>70%</strong>, and enhanced scalability by <strong>50%</strong>. I am proficient in leveraging cutting-edge technologies like <strong>Spring Boot</strong>, <strong>Spring Cloud</strong>, <strong>AWS</strong>, and <strong>Docker</strong> to deliver efficient and maintainable code.
+		  </p>
+		  <p>
+			I hold a <strong>Master’s degree in Information Technology</strong> from <strong>Indiana Wesleyan University</strong>, where I graduated with a <strong>4.0 GPA</strong>. My professional journey includes working with top organizations like <strong>HSBC</strong> and <strong>State Street</strong>, where I contributed to mission-critical projects and earned recognition as the <strong>Best Employee of the Year</strong>.
+		  </p>
+		  <p>
+			I am passionate about solving complex problems, mentoring junior developers, and staying updated with the latest advancements in technology. My goal is to continue building innovative solutions that drive business growth and deliver exceptional user experiences.
+		  </p>
+		</div>
+	  </section>
+
+  <!-- Skills -->
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills-container">
+    <!-- Programming Skills -->
+    <div class="skill-category">
+      <h3>Programming Skills</h3>
+      <div class="skill-card">Java</div>
+      <div class="skill-card">SQL</div>
+    </div>
+
+    <!-- Frameworks -->
+    <div class="skill-category">
+      <h3>Frameworks</h3>
+      <div class="skill-card">Spring Boot</div>
+      <div class="skill-card">Spring Cloud</div>
+      <div class="skill-card">JPA</div>
+      <div class="skill-card">JDBC</div>
+      <div class="skill-card">Spring Security</div>
+      <div class="skill-card">Spring AOP</div>
+      <div class="skill-card">Java Server Pages (JSP)</div>
+      <div class="skill-card">Servlets</div>
+    </div>
+
+    <!-- Microservices Architecture -->
+    <div class="skill-category">
+      <h3>Microservices Architecture</h3>
+      <div class="skill-card">API Gateway</div>
+      <div class="skill-card">Config Server</div>
+      <div class="skill-card">Service Discovery</div>
+      <div class="skill-card">Circuit Breaker</div>
+    </div>
+
+    <!-- Design Patterns -->
+    <div class="skill-category">
+      <h3>Design Patterns</h3>
+      <div class="skill-card">Singleton</div>
+      <div class="skill-card">Factory</div>
+      <div class="skill-card">Observer</div>
+      <div class="skill-card">Strategy</div>
+      <div class="skill-card">Builder</div>
+    </div>
+
+    <!-- Principles and Practices -->
+    <div class="skill-category">
+      <h3>Principles and Practices</h3>
+      <div class="skill-card">SOLID Principles</div>
+      <div class="skill-card">Multithreading</div>
+      <div class="skill-card">Java Collections</div>
+    </div>
+
+    <!-- Databases and Web Services -->
+    <div class="skill-category">
+      <h3>Databases and Web Services</h3>
+      <div class="skill-card">PostgreSQL</div>
+      <div class="skill-card">Redis</div>
+      <div class="skill-card">REST APIs</div>
+    </div>
+
+    <!-- Cloud and Messaging -->
+    <div class="skill-category">
+      <h3>Cloud and Messaging</h3>
+      <div class="skill-card">AWS (EC2, ECS, S3, RDS, Route 53, IAM, SES)</div>
+      <div class="skill-card">Kafka</div>
+    </div>
+
+    <!-- Monitoring and Logging -->
+    <div class="skill-category">
+      <h3>Monitoring and Logging</h3>
+      <div class="skill-card">Log4J</div>
+      <div class="skill-card">ELK Stack</div>
+      <div class="skill-card">Prometheus</div>
+      <div class="skill-card">Grafana</div>
+      <div class="skill-card">Actuator</div>
+      <div class="skill-card">Zipkin</div>
+    </div>
+
+    <!-- Build and Deployment -->
+    <div class="skill-category">
+      <h3>Build and Deployment</h3>
+      <div class="skill-card">Maven</div>
+      <div class="skill-card">Jenkins</div>
+      <div class="skill-card">TeamCity</div>
+      <div class="skill-card">Docker</div>
+    </div>
+
+    <!-- Tools and Platforms -->
+    <div class="skill-category">
+      <h3>Tools and Platforms</h3>
+      <div class="skill-card">GitHub</div>
+      <div class="skill-card">Bitbucket</div>
+      <div class="skill-card">IntelliJ IDEA</div>
+      <div class="skill-card">Eclipse</div>
+      <div class="skill-card">Postman</div>
+      <div class="skill-card">Swagger</div>
+      <div class="skill-card">SonarQube</div>
+      <div class="skill-card">Jira</div>
+      <div class="skill-card">JUnit</div>
+      <div class="skill-card">Mockito</div>
+    </div>
+
+    <!-- Platforms -->
+    <div class="skill-category">
+      <h3>Platforms</h3>
+      <div class="skill-card">Linux</div>
+      <div class="skill-card">Windows</div>
+    </div>
+
+    <!-- Other Skills -->
+    <div class="skill-category">
+      <h3>Other Skills</h3>
+      <div class="skill-card">Problem-solving</div>
+      <div class="skill-card">Data Structures</div>
+      <div class="skill-card">Algorithms</div>
+    </div>
+  </div>
+</section>
+
+  <!-- Work Experience -->
+  <section id="experience">
+    <h2>Work Experience</h2>
+    <div class="experience-card">
+      <h3>Hongkong and Shanghai Banking Corporation Limited (HSBC)(Oct 2024 – Present)</h3>
+      <p><strong>Role:</strong> Java Developer</p>
+      <p><strong>Key Achievements:</strong></p>
+      <ul>
+        <li>Modernized digital payments and transaction monitoring platforms into cloud-native microservices, improving system uptime by 45%.</li>
+        <li>Reduced transaction latency by ~83% by optimizing Kafka event streams and Redis caching, enabling near real-time processing.</li>
+        <li>Improved release stability and delivery speed by implementing CI/CD pipelines, cutting post-release defects by 35%.</li>
+      </ul>
+    </div>
+    <div class="experience-card">
+      <h3>State Street Corporation(May 2020 – Aug 2023)</h3>
+      <p><strong>Role:</strong> Java Developer</p>
+      <p><strong>Key Achievements:</strong></p>
+      <ul>
+        <li>Built a scalable portfolio analytics platform, improving real-time portfolio decision accuracy by 40%.</li>
+        <li>Enhanced system scalability and reliability through microservices architecture, increasing platform uptime by 45%.</li>
+        <li>Optimized financial data retrieval by tuning Oracle/PostgreSQL queries with Redis caching, reducing latency by ~75%.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-card">
+      <h3>Digital Payments & Transaction Monitoring Microservices</h3>
+      <p>
+        Developed and enhanced a high-throughput digital payments and transaction monitoring platform using Spring Boot microservices and distributed event-driven architecture for improved scalability and resilience. Integrated AWS services for cloud deployment and infrastructure optimization, and implemented Kafka and Redis to enable near real-time transaction processing while significantly reducing system latency and improving platform reliability.
+      </p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/shravankumarkoppolu/spring-boot-security-jwt" target="_blank">Code and Architecture</a></p>
+      <p><strong>Live:</strong> <a href="https://github.com/shravankumarkoppolu/FoodDelivery-Swiggy-Frontend-UI" target="_blank">Demo</a></p>
+    </div>
+    <div class="project-card">
+      <h3>Currency-Converter</h3>
+      <p>
+        Designed a lightweight currency conversion application using a serverless AWS architecture. Leveraged AWS Lambda, API Gateway, and DynamoDB to enable scalable, low-latency exchange rate processing, while utilizing S3 and CloudFront for efficient static content delivery, ensuring a cost-effective and highly responsive user experience.
+      </p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/shravankumarkoppolu/AmazonUIClone" target="_blank">Code and Architecture</a></p>
+    </div>
+  </section>
+
+  <!-- Awards and Certificates -->
+  <section id="awards">
+    <h2>Awards and Certificates</h2>
+    <div class="awards-list">
+      <ul>
+        <li>Recognized as the <strong>Best Employee of the Year</strong> for the period 2021-2022.</li>
+        <li>Certified as an <strong>AWS Certified Solutions Architect – Associate</strong> by Amazon Web Services.</li>
+        <li>Certified as an <strong>Oracle Certified Professional, Java SE 11</strong>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contact -->
+	<section id="contact">
+	  <h2>Contact Me</h2>
+	  <form action="https://formspree.io/f/mvgzkprz" method="POST">
+		<input type="text" name="name" placeholder="Your Name" required>
+		<input type="email" name="email" placeholder="Your Email" required>
+		<input type="text" name="subject" placeholder="Subject" required>
+		<textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+		<input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
+		<button type="submit">Send Message</button>
+	  </form>
+	</section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Shravan Kumar Koppolu. All rights reserved.</p>
+    <p>
+      <a href="https://www.linkedin.com/in/shravankoppolu/" target="_blank">LinkedIn</a> | 
+      <a href="https://github.com/shravankumarkoppolu" target="_blank">GitHub</a>
+    </p>
+  </footer>
+</body>
+</html>
